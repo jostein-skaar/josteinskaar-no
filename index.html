@@ -14,6 +14,11 @@
     <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
     <script src="lightbox.js" defer></script>
+    <script>
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches)
+        document.documentElement.classList.add('reveal')
+    </script>
+    <script src="reveal.js" defer></script>
   </head>
   <body>
     <main>
@@ -25,7 +30,8 @@
             <p class="headline">Utvikler</p>
           </div>
         </div>
-        <div class="body"><ul>
+        <div class="body"><p>Jeg liker å skrive kode selv, men har i det siste stadig oftere benyttet meg av AI-agenter til utvikling.</p>
+<ul>
 <li>Jeg er en nysgjerrig, strukturert, lærenem og pålitelig person</li>
 <li>Jeg brenner for å lage effektive og brukervennlige løsninger</li>
 <li>Jeg elsker å automatisere kjedelige ting</li>
@@ -38,6 +44,24 @@
 
       <section>
         <h2>Prosjekter</h2>
+        <div class="body section-intro"><p>Her er noen utvalgte prosjekter jeg har kost meg med de siste årene.</p>
+</div>
+      <article class="card">
+        <header>
+          <h3>Ulike kundeprosjekter</h3>
+          <time>aug. 2004 – nå</time>
+        </header>
+        <p class="lead">Jeg har jobbet med en rekke kunder innen ulike bransjer, og bidratt med arkitektur, rådgivning og utvikling.</p>
+        
+        <div class="body"><p>Tre utvalgte jeg har jobbet for og med:</p>
+<ul>
+<li>Miljødirektoratet</li>
+<li>Logica</li>
+<li>Lyse Tele (ice)</li>
+</ul>
+</div>
+        <ul class="tags"><li>.NET</li><li>C#</li><li>SQL</li><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>Angular</li><li>Svelte</li><li>jQuery</li><li>CI/CD</li><li>Python</li><li>React</li><li>Optimizely</li></ul>
+      </article>
       <article class="card">
         <header>
           <h3>josteinskaar.no</h3>
@@ -94,63 +118,20 @@ samt mulighet for å automatisk fylle ut resultater i etterkant.
           <time>jan. 2020 – nå</time>
         </header>
         <p class="lead">Dette er sandkassa hvor jeg lager ting for gøy eller eksperimenterer litt. Forresten: jeg liker rekursive akronymer.</p>
-        <div class="gallery">
+        <div class="gallery single">
           <figure>
-            <a href="images/fjaas/pulumi.jpg"><img src="thumbs/images/fjaas/pulumi-480.webp" srcset="thumbs/images/fjaas/pulumi-480.webp 480w, thumbs/images/fjaas/pulumi-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Dr Pulumi" loading="lazy" /></a>
-            <figcaption>Dr Pulumi</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/confettiguy.jpg"><img src="thumbs/images/fjaas/confettiguy-480.webp" srcset="thumbs/images/fjaas/confettiguy-480.webp 480w, thumbs/images/fjaas/confettiguy-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Confetti Guy" loading="lazy" /></a>
-            <figcaption>Confetti Guy</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/superceline.jpg"><img src="thumbs/images/fjaas/superceline-480.webp" srcset="thumbs/images/fjaas/superceline-480.webp 480w, thumbs/images/fjaas/superceline-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Super Celine" loading="lazy" /></a>
-            <figcaption>Super Celine</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/lock-the-loo.jpg"><img src="thumbs/images/fjaas/lock-the-loo-480.webp" srcset="thumbs/images/fjaas/lock-the-loo-480.webp 480w, thumbs/images/fjaas/lock-the-loo-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Lock the Loo" loading="lazy" /></a>
-            <figcaption>Lock the Loo</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/kingcalorie.jpg"><img src="thumbs/images/fjaas/kingcalorie-480.webp" srcset="thumbs/images/fjaas/kingcalorie-480.webp 480w, thumbs/images/fjaas/kingcalorie-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet King Calorie" loading="lazy" /></a>
-            <figcaption>King Calorie</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/oldemor.jpg"><img src="thumbs/images/fjaas/oldemor-480.webp" srcset="thumbs/images/fjaas/oldemor-480.webp 480w, thumbs/images/fjaas/oldemor-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Oldemor i farta" loading="lazy" /></a>
-            <figcaption>Oldemor i farta</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/nissen.jpg"><img src="thumbs/images/fjaas/nissen-480.webp" srcset="thumbs/images/fjaas/nissen-480.webp 480w, thumbs/images/fjaas/nissen-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Nissen" loading="lazy" /></a>
-            <figcaption>Nissen</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/korona.jpg"><img src="thumbs/images/fjaas/korona-480.webp" srcset="thumbs/images/fjaas/korona-480.webp 480w, thumbs/images/fjaas/korona-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Såpus mot Korona" loading="lazy" /></a>
-            <figcaption>Såpus mot Korona</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/skyen.jpg"><img src="thumbs/images/fjaas/skyen-480.webp" srcset="thumbs/images/fjaas/skyen-480.webp 480w, thumbs/images/fjaas/skyen-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Skyen" loading="lazy" /></a>
-            <figcaption>Skyen</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/slangespillet.jpg"><img src="thumbs/images/fjaas/slangespillet-480.webp" srcset="thumbs/images/fjaas/slangespillet-480.webp 480w, thumbs/images/fjaas/slangespillet-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Slangespillet" loading="lazy" /></a>
-            <figcaption>Slangespillet</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/vaktmesteren.jpg"><img src="thumbs/images/fjaas/vaktmesteren-480.webp" srcset="thumbs/images/fjaas/vaktmesteren-480.webp 480w, thumbs/images/fjaas/vaktmesteren-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Vaktmesteren" loading="lazy" /></a>
-            <figcaption>Vaktmesteren</figcaption>
-          </figure>
-          <figure>
-            <a href="images/fjaas/bursdager.jpg"><img src="thumbs/images/fjaas/bursdager-480.webp" srcset="thumbs/images/fjaas/bursdager-480.webp 480w, thumbs/images/fjaas/bursdager-960.webp 960w" sizes="(max-width: 30rem) 100vw, 14rem" alt="Skjermbilde fra spillet Bursdager" loading="lazy" /></a>
-            <figcaption>Bursdager</figcaption>
+            <a href="images/2026-10-06--12-15-53.jpg"><img src="thumbs/images/2026-10-06--12-15-53-480.webp" srcset="thumbs/images/2026-10-06--12-15-53-480.webp 480w, thumbs/images/2026-10-06--12-15-53-960.webp 960w" sizes="(max-width: 44rem) 100vw, 42rem" alt="Skjermbilde fra fjaas.no" loading="lazy" /></a>
+            <figcaption>Skjermbilde fra fjaas.no</figcaption>
           </figure>
         </div>
-        <div class="body"><ul>
+        <div class="body"><p>Per 2026 er samtlige spill og lignende på fjaas.no utelukkende kodet for hånd. (Jeg smiler litt av hvor mye raskere ting hadde gått dersom jeg hadde hatt AI-agenter da jeg lagde disse småprosjektene, men det er noe med å lage ting mer eller mindre fra bunnen også.)</p>
+<ul>
 <li>Spill laget sammen med barna</li>
 <li>Spill for å hedre en kollega</li>
 <li>Spill for å teste ut teknologier</li>
 </ul>
 </div>
-        <ul class="tags"><li>JavaScript</li><li>TypeScript</li><li>Phaser</li><li>Tiled</li><li>Python</li></ul>
+        <ul class="tags"><li>JavaScript</li><li>TypeScript</li><li>Phaser</li><li>Tiled</li><li>Python</li><li>Håndkodet</li></ul>
       </article>
       </section>
     </main>
