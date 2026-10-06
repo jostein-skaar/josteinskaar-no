@@ -31,12 +31,27 @@ const build = () =>
     spawn(process.execPath, ['scripts/build.mjs'], { stdio: 'inherit' }).on('exit', resolve)
   })
 
+// Bare ett bygg om gangen: bygget sletter og fyller dist/, så to samtidige bygg
+// kolliderer. Endringer underveis gir ett nytt bygg når det pågående er ferdig.
 let timer
+let running = false
+let pending = false
 const rebuild = () => {
   clearTimeout(timer)
   timer = setTimeout(async () => {
-    if ((await build()) === 0) {
+    if (running) {
+      pending = true
+      return
+    }
+    running = true
+    const code = await build()
+    running = false
+    if (code === 0) {
       for (const res of clients) res.write('data: reload\n\n')
+    }
+    if (pending) {
+      pending = false
+      rebuild()
     }
   }, 100)
 }

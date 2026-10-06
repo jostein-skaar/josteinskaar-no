@@ -3,11 +3,17 @@ import { existsSync } from 'node:fs'
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { ResumeSchema } from '@yamlresume/core'
 import { marked } from 'marked'
+import sharp from 'sharp'
 import { parse } from 'yaml'
 
 const SRC = 'resume.yml'
 const STATIC = 'static'
 const OUT = 'dist'
+// Galleriet og profilbildet viser nedskalerte kopier. Lenkene (og lightboxen)
+// peker fortsatt på originalen, så den lastes først når man klikker.
+const THUMBS = 'thumbs'
+const THUMB_WIDTHS = [480, 960]
+const PHOTO_WIDTH = 240
 
 const resume = parse(await readFile(SRC, 'utf8'))
 
@@ -30,7 +36,8 @@ const images = (p) =>
 // `basics.image` er også vår egen utvidelse: profilbildet øverst på siden.
 const photo = basics.image && images({ images: [basics.image] })[0]
 
-const isMissing = (img) => !/^https?:\/\//.test(img.src) && !existsSync(`${STATIC}/${img.src}`)
+const isExternal = (img) => /^https?:\/\//.test(img.src)
+const isMissing = (img) => !isExternal(img) && !existsSync(`${STATIC}/${img.src}`)
 const missing = [
   ...(photo && isMissing(photo) ? [`  - profilbilde: fant ikke ${STATIC}/${photo.src}`] : []),
   ...projects.flatMap((p) =>
@@ -42,6 +49,24 @@ const missing = [
 if (missing.length) {
   console.error(`Bilder mangler:\n${missing.join('\n')}`)
   process.exit(1)
+}
+
+// Stien til en nedskalert kopi, f.eks. images/fjaas/pulumi.jpg → thumbs/images/fjaas/pulumi-480.webp.
+const thumb = (src, width) => `${THUMBS}/${src.replace(/\.[^./]+$/, '')}-${width}.webp`
+const thumbs = new Map() // src → bredder som trengs
+
+const need = (img, widths) => {
+  if (isExternal(img)) return
+  thumbs.set(img.src, [...new Set([...(thumbs.get(img.src) ?? []), ...widths])])
+}
+
+// srcset med de nedskalerte kopiene. Eksterne bilder brukes som de er.
+const srcset = (img, widths, sizes) => {
+  if (isExternal(img)) return `src="${esc(img.src)}"`
+  need(img, widths)
+  return `src="${esc(thumb(img.src, widths[0]))}" srcset="${widths
+    .map((w) => `${esc(thumb(img.src, w))} ${w}w`)
+    .join(', ')}" sizes="${sizes}"`
 }
 
 const esc = (s = '') =>
@@ -71,7 +96,7 @@ const gallery = (list) =>
         .map(
           (img) => `
           <figure>
-            <a href="${esc(img.src)}"><img src="${esc(img.src)}" alt="${esc(img.alt)}" loading="lazy" /></a>
+            <a href="${esc(img.src)}"><img ${srcset(img, THUMB_WIDTHS, list.length === 1 ? '(max-width: 44rem) 100vw, 42rem' : '(max-width: 30rem) 100vw, 14rem')} alt="${esc(img.alt)}" loading="lazy" /></a>
             ${img.caption ? `<figcaption>${esc(img.caption)}</figcaption>` : ''}
           </figure>`,
         )
@@ -128,7 +153,7 @@ const html = `<!doctype html>
     <main>
       <header class="hero">
         <div class="intro">
-          ${photo ? `<img class="photo" src="${esc(photo.src)}" alt="${esc(photo.alt ?? basics.name)}" />` : ''}
+          ${photo ? `<img class="photo" ${srcset(photo, [PHOTO_WIDTH], '7.5rem')} alt="${esc(photo.alt ?? basics.name)}" />` : ''}
           <div>
             <h1>${esc(basics.name)}</h1>
             ${basics.headline ? `<p class="headline">${esc(basics.headline)}</p>` : ''}
@@ -155,6 +180,17 @@ await mkdir(OUT, { recursive: true })
 await cp(STATIC, OUT, { recursive: true })
 await writeFile(`${OUT}/index.html`, html)
 
+// Bildene blir aldri forstørret: er originalen smalere enn bredden, beholdes originalbredden.
+await Promise.all(
+  [...thumbs].flatMap(([src, widths]) =>
+    widths.map(async (width) => {
+      const out = `${OUT}/${thumb(src, width)}`
+      await mkdir(out.slice(0, out.lastIndexOf('/')), { recursive: true })
+      await sharp(`${STATIC}/${src}`).resize({ width, withoutEnlargement: true }).webp({ quality: 75 }).toFile(out)
+    }),
+  ),
+)
+
 // /favicon.ico for klienter som ikke leser <link rel="icon">. ICO-formatet kan
 // pakke inn en PNG direkte: 6 byte header + 16 byte katalogoppføring + PNG.
 const png = await readFile(`${STATIC}/icons/josteinskaar-no-icon-32.png`)
@@ -168,4 +204,6 @@ ico.writeUInt16LE(32, 12) // bit per piksel
 ico.writeUInt32LE(png.length, 14)
 ico.writeUInt32LE(22, 18) // offset til PNG-data
 await writeFile(`${OUT}/favicon.ico`, Buffer.concat([ico, png]))
-console.log(`Skrev ${OUT}/index.html (${projects.length} prosjekter, ${work.length} jobber)`)
+console.log(
+  `Skrev ${OUT}/index.html (${projects.length} prosjekter, ${work.length} jobber, ${thumbs.size} bilder nedskalert)`,
+)
