@@ -37,6 +37,22 @@ schema.properties.content.properties.basics.properties.image = {
   description: 'Profilbilde som vises øverst på josteinskaar.no. Ignoreres av YAMLResume.',
 }
 
+// `site` holder tekster som bare gjelder nettsiden, ved siden av `content`.
+const section = {
+  type: 'object',
+  properties: {
+    summary: { type: 'string', description: 'Innledning under seksjonsoverskriften. Støtter Markdown.' },
+  },
+  additionalProperties: false,
+}
+schema.properties.site = {
+  type: 'object',
+  title: 'Site',
+  description: 'Innstillinger og tekster for josteinskaar.no. Ignoreres av YAMLResume.',
+  properties: { projects: section, work: section },
+  additionalProperties: false,
+}
+
 delete schema.$id
 await writeFile(OUT, `${JSON.stringify(schema, null, 2)}\n`)
 console.log(`Skrev ${OUT} fra ${SOURCE}`)

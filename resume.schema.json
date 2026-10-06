@@ -3949,6 +3949,34 @@
           "type": "null"
         }
       ]
+    },
+    "site": {
+      "type": "object",
+      "title": "Site",
+      "description": "Innstillinger og tekster for josteinskaar.no. Ignoreres av YAMLResume.",
+      "properties": {
+        "projects": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Innledning under seksjonsoverskriften. Støtter Markdown."
+            }
+          },
+          "additionalProperties": false
+        },
+        "work": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "description": "Innledning under seksjonsoverskriften. Støtter Markdown."
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
   },
   "required": [

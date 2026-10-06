@@ -10,6 +10,13 @@
 locale:
   language: no
 
+# Tekster som bare gjelder nettsiden – egen utvidelse, ignoreres av YAMLResume.
+site:
+  projects:
+    summary: Her er noen utvalgte prosjekter jeg har kost meg med de siste årene.
+  # work:
+  #   summary: Tekst under «Erfaring»-overskriften.
+
 content:
   basics:
     name: Jostein Skaar
@@ -18,6 +25,7 @@ content:
     image: images/jostein-skaar.jpg # profilbilde – egen utvidelse, ignoreres av YAMLResume
     email: jostein.skaar@gmail.com
     summary: |
+      Jeg liker å skrive kode selv, men har i det siste stadig oftere benyttet meg av AI-agenter til utvikling.
       - Jeg er en nysgjerrig, strukturert, lærenem og pålitelig person
       - Jeg brenner for å lage effektive og brukervennlige løsninger
       - Jeg elsker å automatisere kjedelige ting
@@ -37,6 +45,17 @@ content:
       url: https://www.linkedin.com/in/jostein-skaar/
 
   projects:
+    - name: Ulike kundeprosjekter
+      startDate: Aug 2004
+      description: Jeg har jobbet med en rekke kunder innen ulike bransjer, og bidratt med arkitektur, rådgivning og utvikling.
+      summary: |
+        Noen utvalgte jeg har jobbet for og med:
+        - NLM IKT Service
+        - Miljødirektoratet
+        - Logica (WM-data)
+        - Lyse Tele (ice)
+      keywords: [.NET, C#, SQL, PHP, HTML, CSS, JavaScript, TypeScript, Angular, Svelte, jQuery, CI/CD, Python, React, Optimizely]
+
     - name: josteinskaar.no
       startDate: Oct 2026
       endDate: Oct 2026
@@ -79,47 +98,52 @@ content:
       startDate: Jan 2020
       description: 'Dette er sandkassa hvor jeg lager ting for gøy eller eksperimenterer litt. Forresten: jeg liker rekursive akronymer.'
       summary: |
+        Per 2026 er samtlige spill og lignende på fjaas.no utelukkende kodet for hånd. (Jeg smiler litt av hvor mye raskere ting hadde gått dersom jeg hadde hatt AI-agenter da jeg lagde disse småprosjektene, men det er noe med å lage ting mer eller mindre fra bunnen også.)
         - Spill laget sammen med barna
         - Spill for å hedre en kollega
         - Spill for å teste ut teknologier
-      keywords: [JavaScript, TypeScript, Phaser, Tiled, Python]
+      keywords: [JavaScript, TypeScript, Phaser, Tiled, Python, Håndkodet]
       images:
-        - src: images/fjaas/pulumi.jpg
-          alt: Skjermbilde fra spillet Dr Pulumi
-          caption: Dr Pulumi
-        - src: images/fjaas/confettiguy.jpg
-          alt: Skjermbilde fra spillet Confetti Guy
-          caption: Confetti Guy
-        - src: images/fjaas/superceline.jpg
-          alt: Skjermbilde fra spillet Super Celine
-          caption: Super Celine
-        - src: images/fjaas/lock-the-loo.jpg
-          alt: Skjermbilde fra spillet Lock the Loo
-          caption: Lock the Loo
-        - src: images/fjaas/kingcalorie.jpg
-          alt: Skjermbilde fra spillet King Calorie
-          caption: King Calorie
-        - src: images/fjaas/oldemor.jpg
-          alt: Skjermbilde fra spillet Oldemor i farta
-          caption: Oldemor i farta
-        - src: images/fjaas/nissen.jpg
-          alt: Skjermbilde fra spillet Nissen
-          caption: Nissen
-        - src: images/fjaas/korona.jpg
-          alt: Skjermbilde fra spillet Såpus mot Korona
-          caption: Såpus mot Korona
-        - src: images/fjaas/skyen.jpg
-          alt: Skjermbilde fra spillet Skyen
-          caption: Skyen
-        - src: images/fjaas/slangespillet.jpg
-          alt: Skjermbilde fra spillet Slangespillet
-          caption: Slangespillet
-        - src: images/fjaas/vaktmesteren.jpg
-          alt: Skjermbilde fra spillet Vaktmesteren
-          caption: Vaktmesteren
-        - src: images/fjaas/bursdager.jpg
-          alt: Skjermbilde fra spillet Bursdager
-          caption: Bursdager
+        - src: images/2026-10-06--12-15-53.jpg
+          alt: Skjermbilde fra fjaas.no
+          caption: Skjermbilde fra fjaas.no
+
+        # - src: images/fjaas/pulumi.jpg
+        #   alt: Skjermbilde fra spillet Dr Pulumi
+        #   caption: Dr Pulumi
+        # - src: images/fjaas/confettiguy.jpg
+        #   alt: Skjermbilde fra spillet Confetti Guy
+        #   caption: Confetti Guy
+        # - src: images/fjaas/superceline.jpg
+        #   alt: Skjermbilde fra spillet Super Celine
+        #   caption: Super Celine
+        # - src: images/fjaas/lock-the-loo.jpg
+        #   alt: Skjermbilde fra spillet Lock the Loo
+        #   caption: Lock the Loo
+        # - src: images/fjaas/kingcalorie.jpg
+        #   alt: Skjermbilde fra spillet King Calorie
+        #   caption: King Calorie
+        # - src: images/fjaas/oldemor.jpg
+        #   alt: Skjermbilde fra spillet Oldemor i farta
+        #   caption: Oldemor i farta
+        # - src: images/fjaas/nissen.jpg
+        #   alt: Skjermbilde fra spillet Nissen
+        #   caption: Nissen
+        # - src: images/fjaas/korona.jpg
+        #   alt: Skjermbilde fra spillet Såpus mot Korona
+        #   caption: Såpus mot Korona
+        # - src: images/fjaas/skyen.jpg
+        #   alt: Skjermbilde fra spillet Skyen
+        #   caption: Skyen
+        # - src: images/fjaas/slangespillet.jpg
+        #   alt: Skjermbilde fra spillet Slangespillet
+        #   caption: Slangespillet
+        # - src: images/fjaas/vaktmesteren.jpg
+        #   alt: Skjermbilde fra spillet Vaktmesteren
+        #   caption: Vaktmesteren
+        # - src: images/fjaas/bursdager.jpg
+        #   alt: Skjermbilde fra spillet Bursdager
+        #   caption: Bursdager
 
     # - name: Prosjektnavn
     #   startDate: Jan 2024

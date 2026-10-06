@@ -28,6 +28,11 @@ if (!result.success) {
 
 const { basics, profiles = [], projects = [], work = [] } = resume.content
 
+// `site` er vår egen toppnøkkel for tekster som bare gjelder nettsiden. YAMLResume ignorerer den.
+const site = resume.site ?? {}
+const intro = (section) =>
+  section?.summary ? `\n        <div class="body section-intro">${marked.parse(String(section.summary))}</div>` : ''
+
 // `images` er vår egen utvidelse av prosjektene. YAMLResume ignorerer feltet.
 // Hvert bilde er enten en sti (relativ til static/) eller { src, alt, caption }.
 const images = (p) =>
@@ -164,10 +169,10 @@ const html = `<!doctype html>
       </header>
 ${projects.length ? `
       <section>
-        <h2>Prosjekter</h2>${projects.map(project).join('')}
+        <h2>Prosjekter</h2>${intro(site.projects)}${projects.map(project).join('')}
       </section>` : ''}${work.length ? `
       <section>
-        <h2>Erfaring</h2>${work.map(job).join('')}
+        <h2>Erfaring</h2>${intro(site.work)}${work.map(job).join('')}
       </section>` : ''}
     </main>
     <footer class="muted">Generert fra <a ${NEW_TAB} href="https://yamlresume.dev">YAMLResume</a> · ${new Date().getFullYear()}</footer>
