@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="js.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="11.313708"
+     inkscape:cx="30.803339"
+     inkscape:cy="24.792932"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="4472"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs2">
+    <rect
+       x="43.695396"
+       y="46.708874"
+       width="176.28833"
+       height="128.07272"
+       id="rect2080" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="font-size:70.0669px;line-height:1;font-family:Haettenschweiler;-inkscape-font-specification:Haettenschweiler;text-align:center;letter-spacing:0.0315302px;text-anchor:middle;fill:#64d714;stroke-width:1.75748"
+       d="M 3.4458935e-7,29.798959 H 9.5110349 v 12.111174 c 0,0.798288 0.5017811,1.197432 1.5053441,1.197432 1.003562,0 1.505343,-0.399144 1.505343,-1.197432 l 0,-32.8119725 h 10.776892 l 0,32.0250885 c 0,5.884525 -4.07127,8.826787 -12.213811,8.826787 -2.8966459,0 -5.4739765,-0.707055 -7.7319919,-2.121166 C 1.1176039,46.414759 3.4458935e-7,44.555888 3.4458935e-7,42.252257 Z M 25.519734,29.867384 h 9.818946 v 11.255865 c 0,1.117603 0.672843,1.676405 2.018529,1.676405 1.300069,0 1.950104,-0.558802 1.950104,-1.676405 v -5.8161 c 0,-1.779043 -1.186028,-3.865996 -3.558085,-6.260861 -4.584455,-4.447606 -7.435485,-7.435485 -8.553088,-8.963637 -1.117604,-1.528152 -1.676406,-3.204557 -1.676406,-5.029216 V 9.5452456 c 0,-6.363498 4.151099,-9.5452469373792 12.453297,-9.5452469373792 7.435485,0 11.153228,2.8966460373792 11.153228,8.6899380373792 V 17.174601 H 39.307313 V 8.1425391 c 0,-0.9807542 -0.535994,-1.4711313 -1.607981,-1.4711313 -1.254453,0 -1.881679,0.9465418 -1.881679,2.8396254 l 0.205274,3.1817488 c 0,1.824659 1.208837,3.945825 3.62651,6.363498 4.493223,4.310757 7.344252,7.321444 8.553088,9.032062 1.231645,1.710617 1.847467,3.649317 1.847467,5.8161 v 6.260861 c 0,6.523155 -4.162503,9.784733 -12.487509,9.784733 -8.028499,0 -12.042749,-2.965071 -12.042749,-8.895212 z"
+       id="text1"
+       transform="scale(0.9990006,1.0010004)"
+       aria-label="JS"
+       sodipodi:nodetypes="ccsssccsscscccsssscsssssccssccccssssc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-stretch:semi-expanded;font-size:70.0669px;line-height:1;font-family:'Goudy Old Style';-inkscape-font-specification:'Goudy Old Style Bold Semi-Expanded';text-align:center;letter-spacing:0.0315302px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#64d714;fill-opacity:1;stroke-width:1.75748"
+       x="87.51712"
+       y="30.59697"
+       id="text1-0"
+       transform="scale(0.9990006,1.0010004)"><tspan
+         sodipodi:role="line"
+         id="tspan1-9"
+         x="87.532883"
+         y="30.59697"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:70.0669px;font-family:Haettenschweiler;-inkscape-font-specification:Haettenschweiler;fill:#64d714;fill-opacity:1;stroke-width:1.75748">JS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.9209px;line-height:1;font-family:Haettenschweiler;-inkscape-font-specification:Haettenschweiler;text-align:center;letter-spacing:0.0268221px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1.75748"
+       x="16.554058"
+       y="29.247555"
+       id="text2"
+       transform="rotate(90)"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="16.567467"
+         y="29.247555"
+         style="stroke-width:1.75748">Jostein</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.5142px;line-height:1;font-family:Haettenschweiler;-inkscape-font-specification:Haettenschweiler;text-align:center;letter-spacing:0.0259069px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:1.75748"
+       x="13.481766"
+       y="52.578316"
+       id="text3"
+       transform="rotate(45)"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="13.49472"
+         y="52.578316"
+         style="stroke-width:1.75748">Skaar</tspan></text>
+  </g>
+</svg>
