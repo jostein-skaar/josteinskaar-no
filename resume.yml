@@ -49,10 +49,9 @@ content:
       startDate: Aug 2004
       description: Jeg har jobbet med en rekke kunder innen ulike bransjer, og bidratt med arkitektur, rådgivning og utvikling.
       summary: |
-        Noen utvalgte jeg har jobbet for og med:
-        - NLM IKT Service
+        Tre utvalgte jeg har jobbet for og med:
         - Miljødirektoratet
-        - Logica (WM-data)
+        - Logica
         - Lyse Tele (ice)
       keywords: [.NET, C#, SQL, PHP, HTML, CSS, JavaScript, TypeScript, Angular, Svelte, jQuery, CI/CD, Python, React, Optimizely]
 

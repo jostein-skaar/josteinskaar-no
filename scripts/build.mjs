@@ -153,6 +153,11 @@ const html = `<!doctype html>
     <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
     <script src="lightbox.js" defer></script>
+    <script>
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches)
+        document.documentElement.classList.add('reveal')
+    </script>
+    <script src="reveal.js" defer></script>
   </head>
   <body>
     <main>
