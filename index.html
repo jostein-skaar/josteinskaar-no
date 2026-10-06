@@ -2,13 +2,85 @@
 <html lang="nb">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>josteinskaar.no</title>
+    <title>Jostein Skaar</title>
+    <meta name="description" content="Utvikler" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/josteinskaar-no-icon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/josteinskaar-no-icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/josteinskaar-no-icon-180.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="lightbox.js" defer></script>
   </head>
   <body>
-    <h1>Jostein Skaar sin side</h1>
-    <p>Her skal jeg presentere litt prosjekter og annen moro!</p>
-    <p>Oppdatering kommer oktober 2026.</p>
+    <main>
+      <header class="hero">
+        <h1>Jostein Skaar</h1>
+        <p class="headline">Utvikler</p>
+        <div class="body"><ul>
+<li>Jeg er en nysgjerrig, strukturert, lærenem og pålitelig person</li>
+<li>Jeg brenner for å lage effektive og brukervennlige løsninger</li>
+<li>Jeg elsker å automatisere kjedelige ting</li>
+<li>Jeg er leken og kreativ</li>
+<li>Jeg både finner og løser problemer</li>
+</ul>
+</div>
+        <nav class="links"><a href="mailto:jostein.skaar@gmail.com">E-post</a><a target="_blank" rel="noopener" href="https://github.com/jostein-skaar">GitHub</a><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/jostein-skaar/">LinkedIn</a></nav>
+      </header>
+
+      <section>
+        <h2>Prosjekter</h2>
+      <article class="card">
+        <header>
+          <h3>josteinskaar.no</h3>
+          <time>okt. 2026</time>
+        </header>
+        <p class="lead">Statisk generert side for å vise noen av mine prosjekter.</p>
+        
+        <div class="body"><ul>
+<li>Generert fra én YAML-fil i YAMLResume-format</li>
+<li>Publisert med GitHub Actions til GitHub Pages</li>
+<li>Det tekniske er laget ved agentisk utvikling, tekst og bilder er skrevet av meg</li>
+</ul>
+</div>
+        <ul class="tags"><li>AI-utvikling</li></ul>
+      </article>
+      <article class="card">
+        <header>
+          <h3>Startlister friidrett</h3>
+          <time>aug. 2026 – sep. 2026</time>
+        </header>
+        <p class="lead">Verktøy for å lage gode startlister for tekniske øvelser på friidrettsstevner, 
+samt mulighet for å automatisk fylle ut resultater i etterkant.
+</p>
+        <div class="gallery">
+          <figure>
+            <a href="images/2026-10-06--07-35-41.jpg"><img src="images/2026-10-06--07-35-41.jpg" alt="Skjermbilde av uutfylt startliste for lengde med flere klasser" loading="lazy" /></a>
+            <figcaption>Startliste med flere klasser i lengde</figcaption>
+          </figure>
+          <figure>
+            <a href="images/2026-09-27--10-50-11.jpg"><img src="images/2026-09-27--10-50-11.jpg" alt="Viser skanning av resultater med webkamera" loading="lazy" /></a>
+            <figcaption>Skanning av resultater</figcaption>
+          </figure>
+          <figure>
+            <a href="images/2026-10-05--11-20-30.jpg"><img src="images/2026-10-05--11-20-30.jpg" alt="Skjermbilde av tolkning" loading="lazy" /></a>
+            <figcaption>Tolkning av resultater</figcaption>
+          </figure>
+        </div>
+        <div class="body"><ul>
+<li>Henter inn utøverdata fra eksterne kilder</li>
+<li>Genererer pdf med printbare startlister</li>
+<li>Inneholder fiducial markers for å kunne rette opp skjeve bilder</li>
+<li>Klipper ut resultatene og sender minst mulig til AI-tjenester</li>
+<li>Bruker modell fra både OpenAI og Claude for å tolke de håndskrevne resultatene        </li>
+<li>Reduserer feil ved at man slipper manuell inntasting</li>
+<li>Utviklet med god hjelp fra Claude Code og OpenAI Codex</li>
+</ul>
+</div>
+        <ul class="tags"><li>AI-utvikling</li><li>Claude API</li><li>OpenAI API</li><li>TypeScript</li></ul>
+      </article>
+      </section>
+    </main>
+    <footer class="muted">Generert fra <a target="_blank" rel="noopener" href="https://yamlresume.dev">YAMLResume</a> · 2026</footer>
   </body>
 </html>
