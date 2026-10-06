@@ -1,4 +1,4 @@
-// Henter YAMLResume-skjemaet og legger til `images` på prosjekter, slik at
+// Henter YAMLResume-skjemaet og legger til `images` på prosjekter og `image` på basics, slik at
 // editoren validerer og autofullfører resume.yml. Kjør etter oppgradering av YAMLResume.
 import { writeFile } from 'node:fs/promises'
 
@@ -29,6 +29,12 @@ projects.items.properties.images = {
   title: 'Images',
   description: 'Bilder som vises med prosjektet på josteinskaar.no. Ignoreres av YAMLResume.',
   items: image,
+}
+
+schema.properties.content.properties.basics.properties.image = {
+  ...image,
+  title: 'Image',
+  description: 'Profilbilde som vises øverst på josteinskaar.no. Ignoreres av YAMLResume.',
 }
 
 delete schema.$id

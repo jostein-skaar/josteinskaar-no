@@ -27,11 +27,18 @@ const { basics, profiles = [], projects = [], work = [] } = resume.content
 const images = (p) =>
   (p.images ?? []).map((img) => (typeof img === 'string' ? { src: img } : img))
 
-const missing = projects.flatMap((p) =>
-  images(p)
-    .filter((img) => !/^https?:\/\//.test(img.src) && !existsSync(`${STATIC}/${img.src}`))
-    .map((img) => `  - ${p.name}: fant ikke ${STATIC}/${img.src}`),
-)
+// `basics.image` er også vår egen utvidelse: profilbildet øverst på siden.
+const photo = basics.image && images({ images: [basics.image] })[0]
+
+const isMissing = (img) => !/^https?:\/\//.test(img.src) && !existsSync(`${STATIC}/${img.src}`)
+const missing = [
+  ...(photo && isMissing(photo) ? [`  - profilbilde: fant ikke ${STATIC}/${photo.src}`] : []),
+  ...projects.flatMap((p) =>
+    images(p)
+      .filter(isMissing)
+      .map((img) => `  - ${p.name}: fant ikke ${STATIC}/${img.src}`),
+  ),
+]
 if (missing.length) {
   console.error(`Bilder mangler:\n${missing.join('\n')}`)
   process.exit(1)
@@ -107,6 +114,9 @@ const html = `<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${esc(basics.name)}</title>
     <meta name="description" content="${esc(basics.headline)}" />
+    <meta property="og:title" content="${esc(basics.name)}" />
+    <meta property="og:description" content="${esc(basics.headline)}" />
+    ${photo ? `<meta property="og:image" content="${esc(new URL(photo.src, `${basics.url}/`).href)}" />` : ''}
     <link rel="icon" type="image/png" sizes="32x32" href="icons/josteinskaar-no-icon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="icons/josteinskaar-no-icon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="icons/josteinskaar-no-icon-180.png" />
@@ -117,8 +127,13 @@ const html = `<!doctype html>
   <body>
     <main>
       <header class="hero">
-        <h1>${esc(basics.name)}</h1>
-        ${basics.headline ? `<p class="headline">${esc(basics.headline)}</p>` : ''}
+        <div class="intro">
+          ${photo ? `<img class="photo" src="${esc(photo.src)}" alt="${esc(photo.alt ?? basics.name)}" />` : ''}
+          <div>
+            <h1>${esc(basics.name)}</h1>
+            ${basics.headline ? `<p class="headline">${esc(basics.headline)}</p>` : ''}
+          </div>
+        </div>
         ${basics.summary ? `<div class="body">${md(basics.summary)}</div>` : ''}
         ${links.length ? `<nav class="links">${links.join('')}</nav>` : ''}
       </header>

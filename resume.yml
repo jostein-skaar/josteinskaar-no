@@ -15,6 +15,7 @@ content:
     name: Jostein Skaar
     headline: Utvikler
     url: https://www.josteinskaar.no
+    image: images/jostein-skaar.jpg   # profilbilde – egen utvidelse, ignoreres av YAMLResume
     email: jostein.skaar@gmail.com
     summary: |
       - Jeg er en nysgjerrig, strukturert, lærenem og pålitelig person

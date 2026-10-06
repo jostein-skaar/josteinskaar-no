@@ -38,6 +38,26 @@ main, footer {
 a { color: var(--accent); }
 
 .hero { padding: 4rem 0 2rem; }
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.hero .photo {
+  flex: none;
+  display: block;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: var(--tag-bg);
+}
+@media (max-width: 30rem) {
+  .intro { gap: 1rem; }
+  .hero .photo { width: 5.5rem; height: 5.5rem; }
+}
 .hero h1 { margin: 0; font-size: 2.4rem; line-height: 1.15; }
 .headline { margin: .6rem 0 0; font-size: 1.2rem; }
 .muted { color: var(--muted); }
@@ -128,6 +148,7 @@ h2 {
 }
 .lightbox figcaption { margin-top: .75rem; color: #ececee; font-size: .95rem; text-align: center; }
 .lightbox .close {
+  z-index: 1;
   position: fixed;
   top: .75rem;
   right: .75rem;
@@ -137,12 +158,47 @@ h2 {
   border-radius: 50%;
   background: rgb(255 255 255 / .15);
   color: #fff;
-  font-size: 1.9rem;
-  line-height: 1;
   cursor: pointer;
 }
+.lightbox .nav {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / .15);
+  color: #fff;
+  cursor: pointer;
+}
+.lightbox.multiple .nav { display: grid; }
+.lightbox .close,
+.lightbox .nav { place-items: center; padding: 0; }
+.lightbox .close { display: grid; }
+.lightbox button svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.lightbox .nav:disabled { visibility: hidden; }
+.lightbox .prev { left: .75rem; }
+.lightbox .next { right: .75rem; }
+.lightbox .count { color: #9a9aa2; margin-left: .5rem; font-variant-numeric: tabular-nums; }
 .lightbox .close:hover,
-.lightbox .close:focus-visible { background: rgb(255 255 255 / .3); }
+.lightbox .close:focus-visible,
+.lightbox .nav:hover,
+.lightbox .nav:focus-visible { background: rgb(255 255 255 / .3); }
+/* Gi plass til pilene på bredere skjermer. */
+@media (min-width: 40rem) {
+  .lightbox.multiple { padding: 1rem 4.5rem; }
+}
 
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: .75rem 0 .5rem; }
 .tags li {
