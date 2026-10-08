@@ -26,10 +26,18 @@ const RELOAD = `<script>new EventSource('/__reload').onmessage = () => location.
 
 const clients = new Set()
 
-const build = () =>
+const run = (command, args, options = {}) =>
   new Promise((resolve) => {
-    spawn(process.execPath, ['scripts/build.mjs'], { stdio: 'inherit' }).on('exit', resolve)
+    spawn(command, args, { stdio: 'inherit', ...options }).on('exit', resolve)
   })
+
+// Henter manglende bilder fra eksporten før bygging. Feiler det (utløpte lenker), bygges siden likevel.
+const build = async () => {
+  if ((await run('npm run --silent fetch-images', [], { shell: true })) !== 0) {
+    console.error('Kunne ikke hente bilder, bygger uten.')
+  }
+  return run(process.execPath, ['scripts/build.mjs'])
+}
 
 // Bare ett bygg om gangen: bygget sletter og fyller dist/, så to samtidige bygg
 // kolliderer. Endringer underveis gir ett nytt bygg når det pågående er ferdig.

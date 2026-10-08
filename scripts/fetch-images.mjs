@@ -11,7 +11,8 @@ if (!file || !folder) {
 	process.exit(1);
 }
 
-const cv = JSON.parse(await readFile(file, 'utf8'));
+const original = await readFile(file, 'utf8');
+const cv = JSON.parse(original);
 const images = cv.items.flatMap((item) => item.images);
 const problems = [];
 let downloaded = 0;
@@ -43,5 +44,7 @@ if (problems.length) {
 
 for (const image of images) delete image.url;
 delete cv.urlsExpireAt;
-await writeFile(file, JSON.stringify(cv, null, 2) + '\n');
-console.log(`${images.length} images in the export, ${downloaded} downloaded, links removed from ${file}`);
+const output = JSON.stringify(cv, null, 2) + '\n';
+// Do not touch the file when nothing changed, so file watchers (npm run dev) do not loop.
+if (output !== original) await writeFile(file, output);
+console.log(`${images.length} images in the export, ${downloaded} downloaded`);
