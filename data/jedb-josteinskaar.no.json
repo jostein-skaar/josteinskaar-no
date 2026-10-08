@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "exportedFor": "josteinskaar.no",
-  "changedAt": "2026-10-08T20:19:18.8634563Z",
+  "changedAt": "2026-10-08T20:29:08.7788576Z",
   "items": [
     {
       "section": "profile",
@@ -33,12 +33,13 @@
         {
           "src": "images/jostein/jostein-skaar.jpg",
           "alt": "Jostein Skaar",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/profile/jostein/jostein-skaar.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=0irOr8Im%2BQuwHtzlJDr%2BfbvIQIw63wonLY%2BkUMkl7vE%3D",
           "size": 308923
         }
       ]
     },
     {
-      "section": "projects-fun",
+      "section": "projects-own",
       "slug": "josteinskaar-no",
       "title": "josteinskaar.no",
       "from": "2026-10",
@@ -54,7 +55,7 @@
       "images": []
     },
     {
-      "section": "projects-fun",
+      "section": "projects-own",
       "slug": "startlister-friidrett",
       "title": "Startlister friidrett",
       "organization": "Sarpsborg IL",
@@ -83,24 +84,27 @@
           "src": "images/startlister-friidrett/2026-10-06--07-35-41.jpg",
           "alt": "Skjermbilde av uutfylt startliste for lengde med flere klasser",
           "caption": "Startliste med flere klasser i lengde",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/startlister-friidrett/2026-10-06--07-35-41.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=8eL%2BdDVnDMVhSG3DftrNgytVyzPdKiBeGBZAZTTL%2Fzo%3D",
           "size": 229113
         },
         {
           "src": "images/startlister-friidrett/2026-09-27--10-50-11.jpg",
           "alt": "Viser skanning av resultater med webkamera",
           "caption": "Skanning av resultater",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/startlister-friidrett/2026-09-27--10-50-11.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=cKVG7NcHIJidcrH64gRC96V1ffPpul6r72tYVw6xIrk%3D",
           "size": 389790
         },
         {
           "src": "images/startlister-friidrett/2026-10-05--11-20-30.jpg",
           "alt": "Skjermbilde av tolkning",
           "caption": "Tolkning av resultater",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/startlister-friidrett/2026-10-05--11-20-30.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=uT%2BoLhrof7wJ5nmjDfE3XsIfEi4AqGZ6ayIeMiEIZOg%3D",
           "size": 188356
         }
       ]
     },
     {
-      "section": "projects-fun",
+      "section": "projects-own",
       "slug": "treningsplattform-for-barn",
       "title": "Treningsplattform for barn",
       "organization": "Odek AS",
@@ -124,36 +128,41 @@
           "src": "images/treningsplattform-for-barn/2026-07-01-21-09-55-2.jpg",
           "alt": "Hjemmelagde balansebrett",
           "caption": "Balansebrett med mikrokontrollere",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/treningsplattform-for-barn/2026-07-01-21-09-55-2.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=S5ZYEGSogusl4DIdl9sG8Cyd4sMYIgKHP29fXPdiMYg%3D",
           "size": 827768
         },
         {
           "src": "images/treningsplattform-for-barn/2026-05-03-16-38-40.jpg",
           "alt": "Stativer med 3D-printet utstyr på friidrettsstadion",
           "caption": "3D-printet IR-bom for målpassering",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/treningsplattform-for-barn/2026-05-03-16-38-40.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=DKkS1JZ3upWZtv2e%2B%2FGzz9I3DswanDw6pRED9p%2Bs70E%3D",
           "size": 1432750
         },
         {
           "src": "images/treningsplattform-for-barn/2026-05-03-16-38-45.jpg",
           "alt": "Mottaker som sjekker om noen har løpt forbi",
           "caption": "IR-mottaker med mikrokontroller",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/treningsplattform-for-barn/2026-05-03-16-38-45.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=M3m7GOKdQXlhDrUO5bEZ9bY1mrB9d%2BsjxSFWV3A1RuA%3D",
           "size": 380082
         },
         {
           "src": "images/treningsplattform-for-barn/2026-05-03-16-38-49.jpg",
           "alt": "Sender som kontinuerlig sender IR-lys til mottaker",
           "caption": "IR-sender",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/treningsplattform-for-barn/2026-05-03-16-38-49.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=G191qGzyhA0PQNAw%2FiqIcE7JBJp1xAJfSUxJoi%2BtpYQ%3D",
           "size": 347174
         },
         {
           "src": "images/treningsplattform-for-barn/2026-10-08-20-58-32.jpg",
           "alt": "3D-printede pukker med lys",
           "caption": "Reaksjonspukker med lys",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/treningsplattform-for-barn/2026-10-08-20-58-32.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=hQN%2FSVl6PwahlOSeEyAPWe0uqKvGlF3G6OeEzhbZ9NA%3D",
           "size": 316113
         }
       ]
     },
     {
-      "section": "projects-fun",
+      "section": "projects-own",
       "slug": "fjaas",
       "title": "FjaaS as a Service",
       "from": "2020-01",
@@ -176,12 +185,13 @@
           "src": "images/fjaas/2026-10-06-12-15-53.jpg",
           "alt": "Skjermbilde fra fjaas.no",
           "caption": "Skjermbilde fra fjaas.no",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-own/fjaas/2026-10-06-12-15-53.jpg?sv=2026-10-06&st=2026-10-08T20%3A24%3A30Z&se=2026-10-08T21%3A29%3A30Z&sr=b&sp=r&sig=FRrluANO0DKcI5CznlC20felPKAOLn5dDNp9ISCinTY%3D",
           "size": 457572
         }
       ]
     },
     {
-      "section": "projects-fun",
+      "section": "projects-own",
       "slug": "timeforing-cli",
       "title": "Timeføring CLI",
       "organization": "Odek AS",
@@ -245,5 +255,6 @@
       ],
       "images": []
     }
-  ]
+  ],
+  "urlsExpireAt": "2026-10-08T21:29:30.668Z"
 }

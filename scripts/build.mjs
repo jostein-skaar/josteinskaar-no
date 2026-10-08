@@ -54,9 +54,10 @@ if (cv.exportedFor !== EXPORTED_FOR) fail(`${source} er eksportert for ${cv.expo
 const section = (name) => cv.items.filter((item) => item.section === name)
 const profile = section('profile')[0] ?? fail('ingen profile i eksporten')
 const work = section('work')
-// Jobbprosjekter og hobbyprosjekter vises i hver sin seksjon, i rekkefølgen fra eksporten.
+// Jobbprosjekter og egne prosjekter vises i hver sin seksjon, i rekkefølgen fra eksporten.
+// Spill (projects-fun) vises sammen med de andre egne prosjektene (projects-own).
 const workProjects = section('projects-work')
-const hobbyProjects = section('projects-fun')
+const hobbyProjects = cv.items.filter((item) => ['projects-own', 'projects-fun'].includes(item.section))
 
 // Bildene ligger som filer i data/<src>. Et nytt item eller bilde krever at fetch-images.mjs er kjørt.
 const missingImage = (src, what) =>
