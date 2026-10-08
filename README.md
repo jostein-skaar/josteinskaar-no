@@ -14,12 +14,18 @@ Eksporten må være gjort for `josteinskaar.no`. Profilbildet er første bilde p
 
 ### Rutine
 
-- **Rene tekstendringer:** last ned `jedb-josteinskaar.no.json` fra JEDB og legg den i `data/`,
-  så den erstatter den gamle. Filen må hete nøyaktig dette (ikke `... (1).json`).
-- **Nye eller endrede bilder:** samme, men bildene må hentes innen en time etter eksporten:
-  `node scripts/fetch-images.mjs data/jedb-josteinskaar.no.json data`. Scriptet laster ned bilder som
-  mangler, hopper over de som finnes, og fjerner de midlertidige lenkene fra JSON-en. Commit så
-  JSON-en og de nye bildene.
+Last ned `jedb-josteinskaar.no.json` fra JEDB og legg den i `data/` med nøyaktig dette navnet (ikke
+`... (1).json`), slik at den erstatter den gamle eksporten. Kjør så:
+
+```sh
+npm run update
+```
+
+Kommandoen henter bilder fra eksporten og bygger siden. Bildefilene må hentes innen lenkene utløper,
+vanligvis innen en time. Eksporten fra JEDB må fortsatt lastes ned manuelt; `update` henter ikke selve
+innholdsdataene. Hvis nedlasting feiler, beholdes lenkene i JSON-en slik at du kan prøve igjen før de
+utløper. Etter en vellykket kjøring fjernes de midlertidige lenkene fra JSON-en. Commit så JSON-en og de
+nye bildene.
 
 ```sh
 npm ci
