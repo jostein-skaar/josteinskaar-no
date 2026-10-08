@@ -169,6 +169,9 @@ const job = (w) => {
       </article>`
 }
 
+// Overskriften under navnet er rollene. Teksten på siden er description (Markdown); summary er skrevet i tredjeperson (til CV) og vises ikke.
+const headline = (profile.roles ?? []).join(' · ')
+
 const profileLinks = [
   ...(profile.github ? [{ label: 'GitHub', url: profile.github }] : []),
   ...(profile.links ?? []),
@@ -180,9 +183,9 @@ const html = `<!doctype html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${esc(profile.title)}</title>
-    <meta name="description" content="${esc(profile.description)}" />
+    <meta name="description" content="${esc(headline)}" />
     <meta property="og:title" content="${esc(profile.title)}" />
-    <meta property="og:description" content="${esc(profile.description)}" />
+    <meta property="og:description" content="${esc(headline)}" />
     <meta property="og:image" content="${esc(new URL(photo.src, `${SITE_URL}/`).href)}" />
     <link rel="icon" type="image/png" sizes="32x32" href="icons/josteinskaar-no-icon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="icons/josteinskaar-no-icon-192.png" />
@@ -203,10 +206,10 @@ const html = `<!doctype html>
           <img class="photo" ${srcset(photo, [PHOTO_WIDTH], '7.5rem')} alt="${esc(photo.alt || profile.title)}" />
           <div>
             <h1>${esc(profile.title)}</h1>
-            ${profile.description ? `<p class="headline">${esc(profile.description)}</p>` : ''}
+            ${headline ? `<p class="headline">${esc(headline)}</p>` : ''}
           </div>
         </div>
-        ${profile.summary ? `<div class="body">${md(profile.summary)}</div>` : ''}
+        ${profile.description ? `<div class="body">${md(profile.description)}</div>` : ''}
         ${profileLinks.length ? `<nav class="links">${profileLinks.map((link) => `<a ${NEW_TAB} href="${esc(link.url)}">${esc(link.label)}</a>`).join('')}</nav>` : ''}
       </header>
 ${projects.length ? `
