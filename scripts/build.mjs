@@ -70,11 +70,8 @@ if (!validate(cv)) fail(`cv.json følger ikke cv.schema.json:\n${JSON.stringify(
 const section = (name) => cv.items.filter((item) => item.section === name)
 const profile = section('profile')[0] ?? fail('ingen profile i eksporten')
 const work = section('work')
-// Nyeste først på tvers av de to prosjektseksjonene. "2024" sorteres før "2024-01", så årstall uten
-// måned havner litt lavere enn samme år med måned.
-const projects = [...section('projects-work'), ...section('projects-fun')].sort((a, b) =>
-  (b.from ?? '').localeCompare(a.from ?? ''),
-)
+// Jobbprosjekter før fritidsprosjekter. Eksporten er allerede nyest først innenfor hver seksjon.
+const projects = [...section('projects-work'), ...section('projects-fun')]
 
 // Bildene finnes bare i zip-en. Et nytt item eller bilde krever en ny zip-eksport.
 for (const item of cv.items) {
