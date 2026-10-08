@@ -223,4 +223,19 @@ footer { padding: 3rem 1rem; font-size: .85rem; }
 
 html:has(.lightbox[open]) { overflow: hidden; }
 
-abbr[title] { text-decoration: underline dotted; cursor: help; }
+/* JEDB i footeren: klikk/trykk (fokus) viser forklaringen. */
+abbr[data-tip] { position: relative; text-decoration: underline dotted; cursor: pointer; }
+abbr[data-tip]:focus { outline: none; }
+abbr[data-tip]:focus::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 1.6em;
+  left: 0;
+  white-space: nowrap;
+  padding: .3rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: .4rem;
+  background: var(--card);
+  color: inherit;
+  font-size: .85rem;
+}
