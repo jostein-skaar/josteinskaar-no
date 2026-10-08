@@ -18,7 +18,7 @@ const THUMBS = 'thumbs'
 const THUMB_WIDTHS = [480, 960]
 const PHOTO_WIDTH = 240
 // Tekster som bare gjelder nettsiden og ikke finnes i eksporten.
-const PROJECTS_INTRO = 'Her er noen utvalgte prosjekter jeg har kost meg med de siste årene.'
+const HOBBY_INTRO = 'Her er noen utvalgte prosjekter jeg har kost meg med de siste årene.'
 const WORK_INTRO = ''
 // Profillenker (GitHub, LinkedIn osv.) åpnes i ny fane.
 const NEW_TAB = 'target="_blank" rel="noopener"'
@@ -70,8 +70,9 @@ if (!validate(cv)) fail(`cv.json følger ikke cv.schema.json:\n${JSON.stringify(
 const section = (name) => cv.items.filter((item) => item.section === name)
 const profile = section('profile')[0] ?? fail('ingen profile i eksporten')
 const work = section('work')
-// Jobbprosjekter før fritidsprosjekter. Eksporten er allerede nyest først innenfor hver seksjon.
-const projects = [...section('projects-work'), ...section('projects-fun')]
+// Jobbprosjekter og hobbyprosjekter vises i hver sin seksjon, i rekkefølgen fra eksporten.
+const workProjects = section('projects-work')
+const hobbyProjects = section('projects-fun')
 
 // Bildene finnes bare i zip-en. Et nytt item eller bilde krever en ny zip-eksport.
 for (const item of cv.items) {
@@ -209,9 +210,12 @@ const html = `<!doctype html>
         ${profile.description ? `<div class="body">${md(profile.description)}</div>` : ''}
         ${profileLinks.length ? `<nav class="links">${profileLinks.map((link) => `<a ${NEW_TAB} href="${esc(link.url)}">${esc(link.label)}</a>`).join('')}</nav>` : ''}
       </header>
-${projects.length ? `
+${workProjects.length ? `
       <section>
-        <h2>Prosjekter</h2>${intro(PROJECTS_INTRO)}${projects.map(project).join('')}
+        <h2>Kundeprosjekter</h2>${workProjects.map(project).join('')}
+      </section>` : ''}${hobbyProjects.length ? `
+      <section>
+        <h2>Hobbyprosjekter</h2>${intro(HOBBY_INTRO)}${hobbyProjects.map(project).join('')}
       </section>` : ''}${work.length ? `
       <section>
         <h2>Erfaring</h2>${intro(WORK_INTRO)}${work.map(job).join('')}
@@ -265,5 +269,5 @@ ico.writeUInt32LE(png.length, 14)
 ico.writeUInt32LE(22, 18) // offset til PNG-data
 await writeFile(`${OUT}/favicon.ico`, Buffer.concat([ico, png]))
 console.log(
-  `Skrev ${OUT}/index.html (${projects.length} prosjekter, ${work.length} jobber, ${thumbs.size} bilder nedskalert, fra ${source})`,
+  `Skrev ${OUT}/index.html (${workProjects.length} kundeprosjekter, ${hobbyProjects.length} hobbyprosjekter, ${work.length} jobber, ${thumbs.size} bilder nedskalert, fra ${source})`,
 )
