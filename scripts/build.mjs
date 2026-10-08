@@ -9,7 +9,7 @@ import sharp from 'sharp'
 const DATA = 'data'
 const STATIC = 'static'
 const OUT = 'dist'
-const SCHEMA_VERSION = 1
+const SCHEMA_VERSION = 2
 const EXPORTED_FOR = 'josteinskaar.no'
 const SITE_URL = 'https://www.josteinskaar.no'
 // Galleriet og profilbildet viser nedskalerte kopier. Lenkene (og lightboxen)
@@ -71,9 +71,9 @@ for (const item of cv.items) {
 const photo = profile.images?.[0] ?? fail(`profile (${profile.slug}) har ingen bilder, profilbildet må ligge i ${DATA}/`)
 
 // "8. oktober 2026 16:20", i norsk tid uansett hvor bygget kjører.
-const exportedAt = new Date(cv.exportedAt)
-if (Number.isNaN(exportedAt.getTime())) fail(`${source} mangler gyldig exportedAt`)
-const oslo = (options) => exportedAt.toLocaleString('nb-NO', { timeZone: 'Europe/Oslo', ...options })
+const changedAt = new Date(cv.changedAt)
+if (Number.isNaN(changedAt.getTime())) fail(`${source} mangler gyldig changedAt`)
+const oslo = (options) => changedAt.toLocaleString('nb-NO', { timeZone: 'Europe/Oslo', ...options })
 const updated = `Sist oppdatert: ${oslo({ day: 'numeric', month: 'long', year: 'numeric' })} ${oslo({ hour: '2-digit', minute: '2-digit', hour12: false })}`
 
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`)
