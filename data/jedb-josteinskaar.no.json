@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "exportedFor": "josteinskaar.no",
+  "exportedAt": "2026-10-08T10:17:06.549Z",
+  "items": [
+    {
+      "section": "profile",
+      "slug": "jostein",
+      "title": "Jostein Skaar",
+      "location": "Sarpsborg, Norway",
+      "url": "https://www.josteinskaar.no",
+      "links": [
+        {
+          "label": "E-post",
+          "url": "mailto:jostein.skaar@gmail.com"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/jostein-skaar"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/jostein-skaar/"
+        }
+      ],
+      "roles": [
+        "Utvikler"
+      ],
+      "description": "Jeg liker å skrive kode selv, men har i det siste stadig oftere benyttet meg av AI-agenter til utvikling.\n- Jeg er en nysgjerrig, strukturert, lærenem og pålitelig person\n- Jeg brenner for å lage effektive og brukervennlige løsninger\n- Jeg elsker å automatisere kjedelige ting\n- Jeg er leken og kreativ\n- Jeg både finner og løser problemer",
+      "summary": "Jostein har jobbet med utvikling av publiseringsløsninger, saksbehandlingsverktøy, og skjemautvikling i både privat og offentlig sammenheng. Han er utdannet dataingeniør ved Høgskolen i Østfold.\n\nJostein elsker å kode, løse problemer, og å automatisere oppgaver. Han går strukturert og systematisk til verks, og streber etter kontinuerlig forbedring. Han tar eierskap til det han jobber med og liker når han kan være med å levere gode og nyttige løsninger.\n\nHan trives med å jobbe i team og selvstendig, og han har mye erfaring både fra nye prosjekter og eldre løsninger.",
+      "tags": [],
+      "images": [
+        {
+          "src": "images/jostein/jostein-skaar.jpg",
+          "alt": "Jostein Skaar"
+        }
+      ]
+    },
+    {
+      "section": "projects-fun",
+      "slug": "josteinskaar-no",
+      "title": "josteinskaar.no",
+      "from": "2026-10",
+      "to": "2026-10",
+      "links": [],
+      "roles": [],
+      "description": "Statisk generert side for å vise noen av mine prosjekter.",
+      "summary": "- Generert med innhold fra JEDB (Jostein's Everything Database)\n- Publisert med GitHub Actions til GitHub Pages\n- Det tekniske er laget ved agentisk utvikling, tekst og bilder er skrevet av meg",
+      "tags": [
+        "AI-utvikling"
+      ],
+      "images": []
+    },
+    {
+      "section": "projects-fun",
+      "slug": "startlister-friidrett",
+      "title": "Startlister friidrett",
+      "organization": "Sarpsborg IL",
+      "from": "2026-08",
+      "to": "2026-09",
+      "links": [],
+      "roles": [
+        "AI-utvikler"
+      ],
+      "description": "Verktøy for å lage gode startlister for tekniske øvelser på friidrettsstevner, samt mulighet for å automatisk fylle ut resultater i etterkant.",
+      "summary": "- Henter inn utøverdata fra eksterne kilder\n- Genererer pdf med printbare startlister\n- Inneholder fiducial-merker for å kunne rette opp skjeve bilder\n- QR-kode med data som identifiserer startlisten\n- Klipper ut resultatene og sender minst mulig til AI-tjenester\n- Bruker modell fra både OpenAI og Claude for å tolke de håndskrevne resultatene        \n- Reduserer feil ved at man slipper manuell inntasting\n- Utviklet med god hjelp fra Claude Code og OpenAI Codex",
+      "tags": [
+        "AI-utvikling",
+        "Claude API",
+        "OpenAI API",
+        "TypeScript",
+        "JavaScript",
+        "Claude Code",
+        "Codex",
+        "OpenAI",
+        "Claude"
+      ],
+      "images": [
+        {
+          "src": "images/startlister-friidrett/2026-10-06--07-35-41.jpg",
+          "alt": "Skjermbilde av uutfylt startliste for lengde med flere klasser",
+          "caption": "Startliste med flere klasser i lengde"
+        },
+        {
+          "src": "images/startlister-friidrett/2026-09-27--10-50-11.jpg",
+          "alt": "Viser skanning av resultater med webkamera",
+          "caption": "Skanning av resultater"
+        },
+        {
+          "src": "images/startlister-friidrett/2026-10-05--11-20-30.jpg",
+          "alt": "Skjermbilde av tolkning",
+          "caption": "Tolkning av resultater"
+        }
+      ]
+    },
+    {
+      "section": "projects-fun",
+      "slug": "fjaas",
+      "title": "FjaaS as a Service",
+      "from": "2020-01",
+      "url": "https://www.fjaas.no",
+      "links": [],
+      "roles": [],
+      "description": "Dette er sandkassa hvor jeg lager ting for gøy eller eksperimenterer litt. Forresten: jeg liker rekursive akronymer.",
+      "summary": "Per 2026 er samtlige spill og lignende på fjaas.no utelukkende kodet for hånd. (Jeg smiler litt av hvor mye raskere ting hadde gått dersom jeg hadde hatt AI-agenter da jeg lagde disse småprosjektene, men det er noe med å lage ting mer eller mindre fra bunnen også.)\n- Spill laget sammen med barna\n- Spill for å hedre en kollega\n- Spill for å teste ut teknologier",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Phaser",
+        "Tiled",
+        "Python",
+        "Håndkodet"
+      ],
+      "images": [
+        {
+          "src": "images/fjaas/2026-10-06--12-15-53.jpg",
+          "alt": "Skjermbilde fra fjaas.no",
+          "caption": "Skjermbilde fra fjaas.no"
+        }
+      ]
+    },
+    {
+      "section": "projects-work",
+      "slug": "kundeprosjekter",
+      "title": "Ulike kundeprosjekter",
+      "from": "2005-08",
+      "links": [],
+      "roles": [],
+      "description": "Jeg har jobbet med en rekke kunder innen ulike bransjer, og bidratt med arkitektur, rådgivning og utvikling.",
+      "summary": "Tre utvalgte jeg har jobbet for og med:\n- Miljødirektoratet\n- Logica\n- Lyse Tele (ice)",
+      "tags": [
+        ".NET",
+        "C#",
+        "SQL",
+        "PHP",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "Angular",
+        "Svelte",
+        "jQuery",
+        "CI/CD",
+        "Python",
+        "React",
+        "Optimizely"
+      ],
+      "images": []
+    }
+  ]
+}
