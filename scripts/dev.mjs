@@ -1,7 +1,7 @@
 // Lokal utvikling: bygger ved endringer, serverer dist/ og laster nettleseren på nytt.
 import { spawn } from 'node:child_process'
 import { watch } from 'node:fs'
-import { readFile } from 'node:fs/promises'
+import { readdir, readFile, stat } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import { extname, join, normalize } from 'node:path'
 
@@ -31,11 +31,45 @@ const run = (command, args, options = {}) =>
     spawn(command, args, { stdio: 'inherit', ...options }).on('exit', resolve)
   })
 
+// Øyeblikksbilde av data/ (changedAt for eksporten, størrelse og tidspunkt for øvrige filer).
+// Brukes til å se om noe faktisk er endret, siden filhendelser kommer flere ganger og også fra hentingen av bilder.
+const signature = async () => {
+  const files = await readdir('data', { recursive: true })
+  const stats = await Promise.all(
+    files.map(async (file) => {
+      const path = join('data', file)
+      const info = await stat(path).catch(() => null)
+      if (!info?.isFile()) return ''
+      // Eksporten identifiseres med changedAt: samme verdi betyr samme innhold, selv om filen er lagret på nytt
+      // eller fått fjernet de midlertidige bildelenkene.
+      if (file.endsWith('.json')) {
+        const changedAt = await readFile(path, 'utf8').then((text) => JSON.parse(text).changedAt).catch(() => null)
+        if (changedAt) return `${file}:${changedAt}`
+      }
+      return `${file}:${info.size}:${info.mtimeMs}`
+    }),
+  )
+  return stats.join(',')
+}
+
+// Råteksten til eksportfilene, for å se at en ny fil er lagt inn selv om changedAt er lik.
+const exportsText = async () => {
+  const files = (await readdir('data')).filter((file) => file.endsWith('.json'))
+  return (await Promise.all(files.map((file) => readFile(join('data', file), 'utf8').catch(() => '')))).join('')
+}
+
+const fetchImages = () => run('npm run --silent fetch-images', [], { shell: true })
+
+let lastSignature = ''
+let lastExports = ''
+
 // Henter manglende bilder fra eksporten før bygging. Feiler det (utløpte lenker), bygges siden likevel.
 const build = async () => {
-  if ((await run('npm run --silent fetch-images', [], { shell: true })) !== 0) {
+  if ((await fetchImages()) !== 0) {
     console.error('Kunne ikke hente bilder, bygger uten.')
   }
+  lastSignature = await signature()
+  lastExports = await exportsText()
   return run(process.execPath, ['scripts/build.mjs'])
 }
 
@@ -60,12 +94,40 @@ const rebuild = () => {
     if (pending) {
       pending = false
       rebuild()
+    } else if (pendingData) {
+      pendingData = false
+      dataChanged()
+    }
+  }, 100)
+}
+
+// Endringer i data/ gir bare nytt bygg hvis innholdet er annerledes enn da forrige bygg startet.
+let dataTimer
+let pendingData = false
+const dataChanged = () => {
+  clearTimeout(dataTimer)
+  dataTimer = setTimeout(async () => {
+    if (running) {
+      pendingData = true
+      return
+    }
+    if ((await signature()) !== lastSignature) return rebuild()
+    if ((await exportsText()) === lastExports) return
+    // Ny fil med samme changedAt: ingenting å bygge, men midlertidige bildelenker fjernes likevel.
+    running = true
+    console.log('Ny eksportfil har samme changedAt som den forrige, ingen endringer, ignorert.')
+    await fetchImages()
+    lastExports = await exportsText()
+    running = false
+    if (pending) {
+      pending = false
+      rebuild()
     }
   }, 100)
 }
 
 await build()
-for (const path of WATCH) watch(path, { recursive: true }, rebuild)
+for (const path of WATCH) watch(path, { recursive: true }, path === 'data' ? dataChanged : rebuild)
 
 createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost')

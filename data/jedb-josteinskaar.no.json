@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "exportedFor": "josteinskaar.no",
-  "changedAt": "2026-10-08T14:30:35.8053688Z",
+  "changedAt": "2026-10-08T19:02:34.9340802Z",
   "items": [
     {
       "section": "profile",
@@ -112,7 +112,7 @@
         "Fullstackutvikler"
       ],
       "description": "Gjøre friidrett for barn mer lekent og gøy med å utvikle dingser, IoT-enheter og opplegg for lek og moro. Et annet mål for dette prosjektet er også å øke egen kompetanse på ulike områder.",
-      "summary": "Jeg har stått for hele prosessen med ulike dingser som på sikt skal brukes for å lage et morsomt treningsopplegg for friidrett for barn. Jeg har designet, 3D-printet, loddet, håndkodet og vibbekodet. Dette har resultert i flere produkter som fortsatt er under utvikling: Balansebrett med mikrokontroller, automatisk tidtaking, reaksjonspukker.",
+      "summary": "Jeg har stått for hele prosessen med ulike dingser som på sikt skal brukes for å lage et morsomt treningsopplegg for friidrett for barn. Jeg har designet, 3D-printet, loddet, håndkodet, vibbekodet og jobbet med AI-agenter. Dette har resultert i flere produkter som fortsatt er under utvikling: Balansebrett med mikrokontroller, automatisk tidtaking, reaksjonspukker.",
       "tags": [
         "Svelte",
         "OpenSCAD",
@@ -143,6 +143,12 @@
           "alt": "Sender som kontinuerlig sender IR-lys til mottaker",
           "caption": "IR-sender",
           "size": 347174
+        },
+        {
+          "src": "images/treningsplattform-for-barn/2026-10-08-20-58-32.jpg",
+          "alt": "3D-printede pukker med lys",
+          "caption": "Reaksjonspukker med lys",
+          "size": 316113
         }
       ]
     },
