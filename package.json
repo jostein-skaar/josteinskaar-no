@@ -4,13 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "dev": "node scripts/dev.mjs",
-    "schema": "node scripts/schema.mjs"
+    "dev": "node scripts/dev.mjs"
   },
   "devDependencies": {
-    "@yamlresume/core": "^0.16.2",
+    "ajv": "^8.20.0",
+    "fflate": "^0.8.3",
     "marked": "^18.0.14",
-    "sharp": "^0.35.5",
-    "yaml": "^2.9.1"
+    "sharp": "^0.35.5"
   }
 }

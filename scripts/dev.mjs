@@ -7,7 +7,7 @@ import { extname, join, normalize } from 'node:path'
 
 const OUT = 'dist'
 const PORT = Number(process.env.PORT) || 3000
-const WATCH = ['resume.yml', 'static', 'scripts/build.mjs']
+const WATCH = ['data', 'static', 'scripts/build.mjs']
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
