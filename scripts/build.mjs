@@ -215,7 +215,7 @@ ${workProjects.length ? `
         ${workProjects.map(project).join('')}
       </section>` : ''}${hobbyProjects.length ? `
       <section>
-        <h2>Hobbyprosjekter</h2>${intro(HOBBY_INTRO)}${hobbyProjects.map(project).join('')}
+        <h2>Egne prosjekter</h2>${intro(HOBBY_INTRO)}${hobbyProjects.map(project).join('')}
       </section>` : ''}${work.length ? `
       <section>
         <h2>Erfaring</h2>${intro(WORK_INTRO)}${work.map(job).join('')}
@@ -269,5 +269,5 @@ ico.writeUInt32LE(png.length, 14)
 ico.writeUInt32LE(22, 18) // offset til PNG-data
 await writeFile(`${OUT}/favicon.ico`, Buffer.concat([ico, png]))
 console.log(
-  `Skrev ${OUT}/index.html (${workProjects.length} kundeprosjekter, ${hobbyProjects.length} hobbyprosjekter, ${work.length} jobber, ${thumbs.size} bilder nedskalert, fra ${source})`,
+  `Skrev ${OUT}/index.html (${workProjects.length} kundeprosjekter, ${hobbyProjects.length} egne prosjekter, ${work.length} jobber, ${thumbs.size} bilder nedskalert, fra ${source})`,
 )
