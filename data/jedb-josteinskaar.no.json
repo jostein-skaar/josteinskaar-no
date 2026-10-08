@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "exportedFor": "josteinskaar.no",
-  "changedAt": "2026-10-08T19:02:34.9340802Z",
+  "changedAt": "2026-10-08T19:46:12.1166213Z",
   "items": [
     {
       "section": "profile",
@@ -46,7 +46,7 @@
       "sortOrder": 1,
       "links": [],
       "roles": [],
-      "description": "Statisk generert side for å vise noen av mine prosjekter.",
+      "description": "Statisk generert side for å vise fram noen av prosjektene mine.",
       "summary": "- Generert med innhold fra JEDB (Jostein's Everything Database)\n- Publisert med GitHub Actions til GitHub Pages\n- Det tekniske er laget ved agentisk utvikling, tekst og bilder er skrevet av meg",
       "tags": [
         "AI-utvikling"
