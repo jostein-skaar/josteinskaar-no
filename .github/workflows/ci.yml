@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v6
@@ -16,6 +18,16 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+
+      - name: Fetch new images
+        run: node scripts/fetch-images.mjs data/jedb-josteinskaar.no.json data
+
+      - name: Commit the fetched images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || (git commit -m "Fetch images from the JEDB export" && git push)
 
       - run: npm ci
       - run: npm run build
