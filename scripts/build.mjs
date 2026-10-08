@@ -212,7 +212,7 @@ const html = `<!doctype html>
       </header>
 ${workProjects.length ? `
       <section>
-        <h2>Kundeprosjekter</h2>${workProjects.map(project).join('')}
+        ${workProjects.map(project).join('')}
       </section>` : ''}${hobbyProjects.length ? `
       <section>
         <h2>Hobbyprosjekter</h2>${intro(HOBBY_INTRO)}${hobbyProjects.map(project).join('')}
