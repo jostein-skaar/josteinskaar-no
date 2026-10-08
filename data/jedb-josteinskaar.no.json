@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "exportedFor": "josteinskaar.no",
-  "changedAt": "2026-10-08T19:46:12.1166213Z",
+  "changedAt": "2026-10-08T20:19:18.8634563Z",
   "items": [
     {
       "section": "profile",
@@ -33,6 +33,7 @@
         {
           "src": "images/jostein/jostein-skaar.jpg",
           "alt": "Jostein Skaar",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/profile/jostein/jostein-skaar.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=AIkzYC4%2FTP3AI5wDRYzXtf5eUzBgOZ2eYNNNeY56Row%3D",
           "size": 308923
         }
       ]
@@ -83,18 +84,21 @@
           "src": "images/startlister-friidrett/2026-10-06--07-35-41.jpg",
           "alt": "Skjermbilde av uutfylt startliste for lengde med flere klasser",
           "caption": "Startliste med flere klasser i lengde",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/startlister-friidrett/2026-10-06--07-35-41.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=eyWQDnJCM3XX2%2FJ2gzxF%2FRmait8HgrBoRZjm1HF2z9w%3D",
           "size": 229113
         },
         {
           "src": "images/startlister-friidrett/2026-09-27--10-50-11.jpg",
           "alt": "Viser skanning av resultater med webkamera",
           "caption": "Skanning av resultater",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/startlister-friidrett/2026-09-27--10-50-11.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=MF8jchfx2xxh4FaolZq91HAKtLSI4XZz7L6S7z%2BBJt0%3D",
           "size": 389790
         },
         {
           "src": "images/startlister-friidrett/2026-10-05--11-20-30.jpg",
           "alt": "Skjermbilde av tolkning",
           "caption": "Tolkning av resultater",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/startlister-friidrett/2026-10-05--11-20-30.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=ee2BiJtYdNPICCCKCV%2Fgv0z7wIRWsH6oBb1wjCuh5Lg%3D",
           "size": 188356
         }
       ]
@@ -124,30 +128,35 @@
           "src": "images/treningsplattform-for-barn/2026-07-01-21-09-55-2.jpg",
           "alt": "Hjemmelagde balansebrett",
           "caption": "Balansebrett med mikrokontrollere",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/treningsplattform-for-barn/2026-07-01-21-09-55-2.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=GZuIAsQDQt0To%2BTQLNKUDVVAY6OlbI1HgxzjsULA3mA%3D",
           "size": 827768
         },
         {
           "src": "images/treningsplattform-for-barn/2026-05-03-16-38-40.jpg",
           "alt": "Stativer med 3D-printet utstyr på friidrettsstadion",
           "caption": "3D-printet IR-bom for målpassering",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/treningsplattform-for-barn/2026-05-03-16-38-40.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=22sc4xdCfBz6ImehPvYBF%2F1qlA9OmeAAKvLbTux6ntI%3D",
           "size": 1432750
         },
         {
           "src": "images/treningsplattform-for-barn/2026-05-03-16-38-45.jpg",
           "alt": "Mottaker som sjekker om noen har løpt forbi",
           "caption": "IR-mottaker med mikrokontroller",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/treningsplattform-for-barn/2026-05-03-16-38-45.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=izY0ETQ3aaKDn4HnwSyXmzxMtsTesHJCEoOB0a2ZHe8%3D",
           "size": 380082
         },
         {
           "src": "images/treningsplattform-for-barn/2026-05-03-16-38-49.jpg",
           "alt": "Sender som kontinuerlig sender IR-lys til mottaker",
           "caption": "IR-sender",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/treningsplattform-for-barn/2026-05-03-16-38-49.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=Puyz0%2FrYCdFV2duvHVL2i57pcNnsCYJofD%2BDcZZuVds%3D",
           "size": 347174
         },
         {
           "src": "images/treningsplattform-for-barn/2026-10-08-20-58-32.jpg",
           "alt": "3D-printede pukker med lys",
           "caption": "Reaksjonspukker med lys",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/treningsplattform-for-barn/2026-10-08-20-58-32.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=CcJfEiqi33mm%2BeKvDTKcxvHrhtZM06yNUodJ6SilMJc%3D",
           "size": 316113
         }
       ]
@@ -176,9 +185,32 @@
           "src": "images/fjaas/2026-10-06-12-15-53.jpg",
           "alt": "Skjermbilde fra fjaas.no",
           "caption": "Skjermbilde fra fjaas.no",
+          "url": "https://jedb0894c4555a2f68bce2c9.blob.core.windows.net/cvimages/jostein/projects-fun/fjaas/2026-10-06-12-15-53.jpg?sv=2026-10-06&st=2026-10-08T20%3A14%3A23Z&se=2026-10-08T21%3A19%3A23Z&sr=b&sp=r&sig=W83%2Bi1NDrVVeXW9n%2FiXiH8PFuPyzaDBh%2FPq4%2BZISM2Q%3D",
           "size": 457572
         }
       ]
+    },
+    {
+      "section": "projects-fun",
+      "slug": "timeforing-cli",
+      "title": "Timeføring CLI",
+      "organization": "Odek AS",
+      "from": "2022-01",
+      "to": "2022-12",
+      "links": [],
+      "roles": [
+        "Fullstackutvikler"
+      ],
+      "description": "CLI for å forenkle egen timeføring, inkludert synkronisering på tvers av ulike systemer. Dette medfører behov for mindre manuelle dobbeltsjekkinger.",
+      "summary": "Jeg både designet og utviklet løsningen. Først skrev jeg en implementasjon i Python, deretter lagde jeg en forbedring i C#. Her har jeg brukt Playwright som testautomasjon for å kunne lese og fylle ut skjemaer i ulike løsninger.",
+      "tags": [
+        "C#",
+        "Python",
+        "Playwright",
+        ".NET",
+        "Google API"
+      ],
+      "images": []
     },
     {
       "section": "projects-work",
@@ -223,5 +255,6 @@
       ],
       "images": []
     }
-  ]
+  ],
+  "urlsExpireAt": "2026-10-08T21:19:23.262Z"
 }
