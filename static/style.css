@@ -223,11 +223,12 @@ footer { padding: 3rem 1rem; font-size: .85rem; }
 
 html:has(.lightbox[open]) { overflow: hidden; }
 
-/* JEDB i footeren: klikk/trykk (fokus) viser forklaringen. */
+/* JEDB i footeren: hover (mus) eller klikk/trykk (fokus) viser forklaringen. */
 abbr[data-tip] { position: relative; text-decoration: underline dotted; cursor: pointer; }
 abbr[data-tip]:focus { outline: none; }
-abbr[data-tip]:focus::after {
+abbr[data-tip]::after {
   content: attr(data-tip);
+  display: none;
   position: absolute;
   bottom: 1.6em;
   left: 0;
@@ -236,6 +237,7 @@ abbr[data-tip]:focus::after {
   border: 1px solid var(--border);
   border-radius: .4rem;
   background: var(--card);
-  color: inherit;
   font-size: .85rem;
 }
+abbr[data-tip]:focus::after { display: block; }
+@media (hover: hover) { abbr[data-tip]:hover::after { display: block; } }
