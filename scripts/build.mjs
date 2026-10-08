@@ -70,6 +70,12 @@ for (const item of cv.items) {
 // Profilbildet er det første bildet på profile-itemet.
 const photo = profile.images?.[0] ?? fail(`profile (${profile.slug}) har ingen bilder, profilbildet må ligge i ${DATA}/`)
 
+// "8. oktober 2026 16:20", i norsk tid uansett hvor bygget kjører.
+const exportedAt = new Date(cv.exportedAt)
+if (Number.isNaN(exportedAt.getTime())) fail(`${source} mangler gyldig exportedAt`)
+const oslo = (options) => exportedAt.toLocaleString('nb-NO', { timeZone: 'Europe/Oslo', ...options })
+const updated = `Sist oppdatert: ${oslo({ day: 'numeric', month: 'long', year: 'numeric' })} ${oslo({ hour: '2-digit', minute: '2-digit', hour12: false })}`
+
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`)
 const md = (s = '') => marked.parse(String(s))
 const intro = (text) => (text ? `\n        <div class="body section-intro">${md(text)}</div>` : '')
@@ -207,7 +213,7 @@ ${workProjects.length ? `
         <h2>Erfaring</h2>${intro(WORK_INTRO)}${work.map(job).join('')}
       </section>` : ''}
     </main>
-    <footer class="muted">Generert fra <abbr tabindex="0" data-tip="Jostein's Everything Database">JEDB</abbr> · ${new Date().getFullYear()}</footer>
+    <footer class="muted">Generert fra <abbr tabindex="0" data-tip="Jostein's Everything Database">JEDB</abbr> · ${updated}</footer>
   </body>
 </html>
 `
