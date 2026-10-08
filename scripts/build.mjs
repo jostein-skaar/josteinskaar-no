@@ -1,8 +1,8 @@
-// Bygger siden fra JEDB-eksporten i data/: leser zip-en i minnet, validerer cv.json,
-// genererer index.html og lager nedskalerte WebP-kopier av bildene (originalene kopieres til dist/).
-import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
-import Ajv2020 from 'ajv/dist/2020.js'
-import { unzipSync, strFromU8 } from 'fflate'
+// Bygger siden fra JEDB-eksporten i data/: leser jedb-josteinskaar.no.json, genererer index.html og
+// lager nedskalerte WebP-kopier av bildene (originalene kopieres til dist/). Bildene ligger som
+// filer i data/images/ (hentes med scripts/fetch-images.mjs).
+import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises'
+import { join } from 'node:path'
 import { marked } from 'marked'
 import sharp from 'sharp'
 
@@ -29,43 +29,27 @@ const fail = (message) => {
   process.exit(1)
 }
 
-// Eksporten er input som ikke skal redigeres for hånd: ny zip fra JEDB erstatter den gamle.
-const files = await readdir(DATA).catch(() => [])
-const zips = files.filter((file) => /^jedb-.*\.zip$/.test(file))
-if (zips.length !== 1) fail(`forventet nøyaktig én jedb-*.zip i ${DATA}/, fant ${zips.length}`)
-const zip = unzipSync(new Uint8Array(await readFile(`${DATA}/${zips[0]}`)))
-
-const entry = (path) => zip[path] ?? fail(`${path} mangler i ${zips[0]}`)
-
-// Ved rene tekstendringer holder det å laste ned jedb-josteinskaar.no.json fra JEDB og legge den i data/.
-// Navnet må være nøyaktig det, så "jedb-josteinskaar.no (1).json" fra nettleseren stopper bygget i stedet
-// for å bli oversett. Den løse filen brukes bare hvis exportedAt er nyere enn cv.json i zip-en.
+// Eksporten er input som ikke skal redigeres for hånd: ny JSON fra JEDB erstatter den gamle.
+// Navnet må være nøyaktig jedb-josteinskaar.no.json, så "jedb-josteinskaar.no (1).json" fra
+// nettleseren stopper bygget i stedet for å bli oversett.
 const JSON_NAME = `jedb-${EXPORTED_FOR}.json`
+const files = await readdir(DATA).catch(() => [])
 const misnamed = files.filter((file) => /^jedb-.*\.json$/i.test(file) && file !== JSON_NAME)
 if (misnamed.length) fail(`${misnamed.join(', ')} i ${DATA}/ har feil navn, filen skal hete ${JSON_NAME}`)
-const jsons = files.filter((file) => file === JSON_NAME)
+if (!files.includes(JSON_NAME)) fail(`${DATA}/${JSON_NAME} finnes ikke, last ned eksporten fra JEDB og legg den i ${DATA}/`)
 
-const parse = (text, name) => {
-  try {
-    return JSON.parse(text)
-  } catch (error) {
-    fail(`${name} er ikke gyldig JSON: ${error.message}`)
-  }
+const source = `${DATA}/${JSON_NAME}`
+let cv
+try {
+  cv = JSON.parse(await readFile(source, 'utf8'))
+} catch (error) {
+  fail(`${source} er ikke gyldig JSON: ${error.message}`)
 }
-const zipped = parse(strFromU8(entry('cv.json')), `cv.json i ${zips[0]}`)
-const loose = jsons.length ? parse(await readFile(`${DATA}/${jsons[0]}`, 'utf8'), `${DATA}/${jsons[0]}`) : null
-const cv = loose?.exportedAt > zipped.exportedAt ? loose : zipped
-const source = cv === loose ? `${DATA}/${jsons[0]}` : zips[0]
 if (cv.schemaVersion !== SCHEMA_VERSION) {
-  fail(`cv.json har schemaVersion ${cv.schemaVersion}, bygget kjenner bare ${SCHEMA_VERSION}`)
+  fail(`${source} har schemaVersion ${cv.schemaVersion}, bygget kjenner bare ${SCHEMA_VERSION}`)
 }
-// Begge eksportene er gyldige mot skjemaet, så uten denne sjekken ville en eksport for
-// fjaas.no bygget feil side i stillhet.
-for (const [name, data] of [[zips[0], zipped], ...(loose ? [[`${DATA}/${jsons[0]}`, loose]] : [])]) {
-  if (data.exportedFor !== EXPORTED_FOR) fail(`${name} er eksportert for ${data.exportedFor}, ikke ${EXPORTED_FOR}`)
-}
-const validate = new Ajv2020({ strict: false }).compile(JSON.parse(strFromU8(entry('cv.schema.json'))))
-if (!validate(cv)) fail(`cv.json følger ikke cv.schema.json:\n${JSON.stringify(validate.errors, null, 2)}`)
+// Uten denne sjekken ville en eksport for fjaas.no bygget feil side i stillhet.
+if (cv.exportedFor !== EXPORTED_FOR) fail(`${source} er eksportert for ${cv.exportedFor}, ikke ${EXPORTED_FOR}`)
 
 const section = (name) => cv.items.filter((item) => item.section === name)
 const profile = section('profile')[0] ?? fail('ingen profile i eksporten')
@@ -74,15 +58,17 @@ const work = section('work')
 const workProjects = section('projects-work')
 const hobbyProjects = section('projects-fun')
 
-// Bildene finnes bare i zip-en. Et nytt item eller bilde krever en ny zip-eksport.
+// Bildene ligger som filer i data/<src>. Et nytt item eller bilde krever at fetch-images.mjs er kjørt.
+const missingImage = (src, what) =>
+  fail(`${what} ${src} mangler i ${DATA}/, kjør scripts/fetch-images.mjs (node scripts/fetch-images.mjs ${source} ${DATA})`)
 for (const item of cv.items) {
   for (const img of item.images ?? []) {
-    if (!zip[img.src]) fail(`${img.src} (${item.slug}) mangler i ${zips[0]}, eksporter en ny zip fra JEDB`)
+    if (!(await stat(join(DATA, img.src)).catch(() => null))) missingImage(img.src, `bildet (${item.slug})`)
   }
 }
 
 // Profilbildet er det første bildet på profile-itemet.
-const photo = profile.images?.[0] ?? fail(`profile (${profile.slug}) har ingen bilder, profilbildet må ligge i ${zips[0]}`)
+const photo = profile.images?.[0] ?? fail(`profile (${profile.slug}) har ingen bilder, profilbildet må ligge i ${DATA}/`)
 
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`)
 const md = (s = '') => marked.parse(String(s))
@@ -237,7 +223,7 @@ await Promise.all(
   [...originals].map(async (src) => {
     const out = `${OUT}/${src}`
     await mkdir(out.slice(0, out.lastIndexOf('/')), { recursive: true })
-    await writeFile(out, zip[src])
+    await writeFile(out, await readFile(join(DATA, src)))
   }),
 )
 
@@ -247,7 +233,7 @@ await Promise.all(
     widths.map(async (width) => {
       const out = `${OUT}/${thumb(src, width)}`
       await mkdir(out.slice(0, out.lastIndexOf('/')), { recursive: true })
-      await sharp(zip[src])
+      await sharp(await readFile(join(DATA, src)))
         .resize({ width, withoutEnlargement: true })
         .webp({ quality: 75 })
         .toFile(out)

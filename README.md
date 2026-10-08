@@ -5,24 +5,25 @@ Homepage for josteinskaar.no
 
 Siden bygges fra en eksport fra JEDB i `data/`:
 
-- `data/jedb-josteinskaar.no.zip` inneholder `cv.json`, `cv.schema.json` og bildene.
-  Det skal ligge nøyaktig én `jedb-*.zip` i `data/`.
-- `data/jedb-josteinskaar.no.json` er valgfri og brukes bare hvis den er nyere
-  enn `cv.json` i zip-en.
+- `data/jedb-josteinskaar.no.json` er eksporten (tekst og metadata). Filen må hete nøyaktig dette.
+- `data/images/<slug>/<fil>` er bildene. De ligger i repoet fordi bygget i GitHub Actions
+  ikke har tilgang til JEDB. Eksporten har bare midlertidige lenker (60 minutter) til bildene.
 
 Eksporten må være gjort for `josteinskaar.no`. Profilbildet er første bilde på
-`profile`-itemet og må ligge i zip-en.
+`profile`-itemet.
 
 ### Rutine
 
-- **Ny zip:** last ned zip-en fra JEDB og legg den i `data/`, så den erstatter den gamle.
-  Nye items og nye bilder krever alltid en ny zip.
 - **Rene tekstendringer:** last ned `jedb-josteinskaar.no.json` fra JEDB og legg den i `data/`,
   så den erstatter den gamle. Filen må hete nøyaktig dette (ikke `... (1).json`).
+- **Nye eller endrede bilder:** samme, men bildene må hentes innen en time etter eksporten:
+  `node scripts/fetch-images.mjs data/jedb-josteinskaar.no.json data`. Scriptet laster ned bilder som
+  mangler, hopper over de som finnes, og fjerner de midlertidige lenkene fra JSON-en. Commit så
+  JSON-en og de nye bildene.
 
 ```sh
 npm ci
-npm run build   # validerer eksporten og skriver dist/
+npm run build   # skriver dist/
 npm run dev     # bygger på nytt ved endringer og serverer dist/
 ```
 

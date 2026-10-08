@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "exportedFor": "josteinskaar.no",
-  "exportedAt": "2026-10-08T10:17:06.549Z",
+  "exportedAt": "2026-10-08T14:20:49.399Z",
   "items": [
     {
       "section": "profile",
@@ -32,7 +32,8 @@
       "images": [
         {
           "src": "images/jostein/jostein-skaar.jpg",
-          "alt": "Jostein Skaar"
+          "alt": "Jostein Skaar",
+          "size": 308923
         }
       ]
     },
@@ -42,6 +43,7 @@
       "title": "josteinskaar.no",
       "from": "2026-10",
       "to": "2026-10",
+      "sortOrder": 1,
       "links": [],
       "roles": [],
       "description": "Statisk generert side for å vise noen av mine prosjekter.",
@@ -58,6 +60,7 @@
       "organization": "Sarpsborg IL",
       "from": "2026-08",
       "to": "2026-09",
+      "sortOrder": 2,
       "links": [],
       "roles": [
         "AI-utvikler"
@@ -79,17 +82,67 @@
         {
           "src": "images/startlister-friidrett/2026-10-06--07-35-41.jpg",
           "alt": "Skjermbilde av uutfylt startliste for lengde med flere klasser",
-          "caption": "Startliste med flere klasser i lengde"
+          "caption": "Startliste med flere klasser i lengde",
+          "size": 229113
         },
         {
           "src": "images/startlister-friidrett/2026-09-27--10-50-11.jpg",
           "alt": "Viser skanning av resultater med webkamera",
-          "caption": "Skanning av resultater"
+          "caption": "Skanning av resultater",
+          "size": 389790
         },
         {
           "src": "images/startlister-friidrett/2026-10-05--11-20-30.jpg",
           "alt": "Skjermbilde av tolkning",
-          "caption": "Tolkning av resultater"
+          "caption": "Tolkning av resultater",
+          "size": 188356
+        }
+      ]
+    },
+    {
+      "section": "projects-fun",
+      "slug": "treningsplattform-for-barn",
+      "title": "Treningsplattform for barn",
+      "organization": "Odek AS",
+      "from": "2024-06",
+      "sortOrder": 3,
+      "links": [],
+      "roles": [
+        "AI-utvikler",
+        "Fullstackutvikler"
+      ],
+      "description": "Gjøre friidrett for barn mer lekent og gøy med å utvikle dingser, IoT-enheter og opplegg for lek og moro. Et annet mål for dette prosjektet er også å øke egen kompetanse på ulike områder.",
+      "summary": "Jeg har stått for hele prosessen med ulike dingser som på sikt skal brukes for å lage et morsomt treningsopplegg for friidrett for barn. Jeg har designet, 3D-printet, loddet, håndkodet og vibbekodet. Dette har resultert i flere produkter som fortsatt er under utvikling: Balansebrett med mikrokontroller, automatisk tidtaking, reaksjonspukker.",
+      "tags": [
+        "Svelte",
+        "OpenSCAD",
+        "CI/CD",
+        "Cursor"
+      ],
+      "images": [
+        {
+          "src": "images/treningsplattform-for-barn/2026-07-01-21-09-55.jpg",
+          "alt": "Hjemmelagde balansebrett",
+          "caption": "Balansebrett med mikrokontrollere",
+          "size": 833234
+        },
+        {
+          "src": "images/treningsplattform-for-barn/2026-05-03-16-38-40.jpg",
+          "alt": "Stativer med 3D-printet utstyr på friidrettsstadion",
+          "caption": "3D-printet IR-bom for målpassering",
+          "size": 1432750
+        },
+        {
+          "src": "images/treningsplattform-for-barn/2026-05-03-16-38-45.jpg",
+          "alt": "Mottaker som sjekker om noen har løpt forbi",
+          "caption": "IR-mottaker med mikrokontroller",
+          "size": 380082
+        },
+        {
+          "src": "images/treningsplattform-for-barn/2026-05-03-16-38-49.jpg",
+          "alt": "Sender som kontinuerlig sender IR-lys til mottaker",
+          "caption": "IR-sender",
+          "size": 347174
         }
       ]
     },
@@ -99,6 +152,7 @@
       "title": "FjaaS as a Service",
       "from": "2020-01",
       "url": "https://www.fjaas.no",
+      "sortOrder": 4,
       "links": [],
       "roles": [],
       "description": "Dette er sandkassa hvor jeg lager ting for gøy eller eksperimenterer litt. Forresten: jeg liker rekursive akronymer.",
@@ -115,7 +169,8 @@
         {
           "src": "images/fjaas/2026-10-06--12-15-53.jpg",
           "alt": "Skjermbilde fra fjaas.no",
-          "caption": "Skjermbilde fra fjaas.no"
+          "caption": "Skjermbilde fra fjaas.no",
+          "size": 462553
         }
       ]
     },
@@ -126,7 +181,7 @@
       "from": "2005-08",
       "links": [],
       "roles": [],
-      "description": "Jeg har jobbet med en rekke kunder innen ulike bransjer, og bidratt med arkitektur, rådgivning og utvikling.",
+      "description": "Jeg har jobbet med en rekke kunder innen ulike bransjer, og bidratt med arkitektur, rådgivning og utvikling. Ta gjerne kontakt dersom du vil vite mer om prosjekter og ting jeg har jobbet med.",
       "summary": "Tre utvalgte jeg har jobbet for og med:\n- Miljødirektoratet\n- Logica\n- Lyse Tele (ice)",
       "tags": [
         ".NET",
@@ -143,7 +198,22 @@
         "CI/CD",
         "Python",
         "React",
-        "Optimizely"
+        "Optimizely",
+        "Azure",
+        "Altinn",
+        "Blazor",
+        "Cypress",
+        "DevOps",
+        "Git",
+        "Github Actions",
+        "Leaflet.js",
+        "MySQL",
+        "NServiceBus",
+        "Personvern og GDPR",
+        "Playwright",
+        "Terraform",
+        "WinForms",
+        "Web Forms"
       ],
       "images": []
     }
