@@ -222,3 +222,5 @@ h2 {
 footer { padding: 3rem 1rem; font-size: .85rem; }
 
 html:has(.lightbox[open]) { overflow: hidden; }
+
+abbr[title] { text-decoration: underline dotted; cursor: help; }

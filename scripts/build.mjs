@@ -217,7 +217,7 @@ ${projects.length ? `
         <h2>Erfaring</h2>${intro(WORK_INTRO)}${work.map(job).join('')}
       </section>` : ''}
     </main>
-    <footer class="muted">Generert fra JEDB · ${new Date().getFullYear()}</footer>
+    <footer class="muted">Generert fra <abbr title="Jostein's Everything Database">JEDB</abbr> · ${new Date().getFullYear()}</footer>
   </body>
 </html>
 `
