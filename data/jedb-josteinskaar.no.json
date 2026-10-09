@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "exportedFor": "josteinskaar.no",
-  "changedAt": "2026-10-09T08:36:02.3487798Z",
+  "changedAt": "2026-10-09T09:23:13.1096656Z",
   "items": [
     {
       "section": "profile",
@@ -145,7 +145,7 @@
       "sortOrder": 4,
       "links": [],
       "roles": [],
-      "description": "Dette er sandkassa hvor jeg lager ting for gøy eller eksperimenterer litt. Forresten: jeg liker rekursive akronymer.",
+      "description": "Dette er sandkassa hvor jeg lager ting for gøy eller eksperimenterer litt. Jeg har laget småspill og annen moro helt siden jeg gikk på Høgskolen i Østfold. Jeg har brukt Adobe Flash, .NET for XBOX, men i nyere tid er det JavaScript det har gått i.",
       "summary": "Per 2026 er samtlige spill og lignende på fjaas.no utelukkende kodet for hånd. (Jeg smiler litt av hvor mye raskere ting hadde gått dersom jeg hadde hatt AI-agenter da jeg lagde disse småprosjektene, men det er jo noe med å lage ting mer eller mindre fra bunnen også.)\n- Spill laget sammen med barna\n- Spill for å hedre en kollega\n- Spill for å teste ut teknologier",
       "tags": [
         "JavaScript",
