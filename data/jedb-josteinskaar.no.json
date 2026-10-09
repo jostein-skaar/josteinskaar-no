@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "exportedFor": "josteinskaar.no",
-  "changedAt": "2026-10-08T20:29:08.7788576Z",
+  "changedAt": "2026-10-08T21:07:35.4933834Z",
   "items": [
     {
       "section": "profile",
@@ -36,22 +36,6 @@
           "size": 308923
         }
       ]
-    },
-    {
-      "section": "projects-own",
-      "slug": "josteinskaar-no",
-      "title": "josteinskaar.no",
-      "from": "2026-10",
-      "to": "2026-10",
-      "sortOrder": 1,
-      "links": [],
-      "roles": [],
-      "description": "Statisk generert side for å vise fram noen av prosjektene mine.",
-      "summary": "- Generert med innhold fra JEDB (Jostein's Everything Database)\n- Publisert med GitHub Actions til GitHub Pages\n- Det tekniske er laget ved agentisk utvikling, tekst og bilder er skrevet av meg",
-      "tags": [
-        "AI-utvikling"
-      ],
-      "images": []
     },
     {
       "section": "projects-own",
@@ -207,6 +191,7 @@
       "slug": "kundeprosjekter",
       "title": "Ulike kundeprosjekter",
       "from": "2005-08",
+      "sortOrder": 1,
       "links": [],
       "roles": [],
       "description": "Jeg har jobbet med en rekke kunder innen ulike bransjer, og bidratt med arkitektur, rådgivning og utvikling. Ta gjerne kontakt dersom du vil vite mer om prosjekter og ting jeg har jobbet med.",
